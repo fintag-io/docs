@@ -18,18 +18,19 @@
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "installation"
+
             ]
           },
           {
-            "group": "Customization",
+            "group": "Usage",
             "pages": [
               "essentials/settings",
               "essentials/navigation"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "The Future",
             "pages": [
               "essentials/markdown",
               "essentials/code",
@@ -38,7 +39,7 @@
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Resource and Contribution",
             "pages": [
               "ai-tools/cursor",
               "ai-tools/claude-code",
@@ -81,15 +82,18 @@
   "navbar": {
     "links": [
       {
+        "label": "Home",
+        "href": "https://fintag.io"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/fintag-io"
+      },
+      {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@fintag.io"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
