@@ -1,9 +1,75 @@
 ---
 title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+description: "Get your FinTag SDK project up and running in minutes with our step-by-step quickstart guide."
 ---
 
+
 ## Get started in three steps
+
+
+### Step 1: Install the SDK
+
+<CodeGroup>
+  ```bash JavaScript
+  npm install @fintag/js
+  ```
+  ```bash Python
+  pip install fintag-py
+  ```
+  ```bash Rust
+  cargo add fintag-rust
+  ```
+  ``` bash Go
+  go get github.com/fintag-io/fintag-go
+  ```
+  ```bash Swift
+  swift package add @fintag-io/fintag-swift
+  ```
+
+</CodeGroup>
+
+### Step 2: Initialize the SDK
+
+<CodeGroup dropdown>
+  ```javascript JavaScript
+  import { FintagClient } from '@fintag/js';
+
+  const fintag = new FintagClient(
+    apiUrl='YOUR_API_URL',
+    apiKey='YOUR_API_KEY'
+  );
+  ```
+  ```python Python
+  from fintag import FintagClient
+
+  fintag = FintagClient(
+      api_url="YOUR_API_URL",
+      api_key='YOUR_API_KEY'
+  )
+  ```
+  ```rust Rust
+  use fintag::FinTag;
+
+  let fintag = FinTag::new("YOUR_API_KEY");
+  ```
+  ```go Go
+  import (
+      "github.com/fintag-io/fintag-go"
+  )
+
+  fintag := fintag.NewFintagClient("YOUR_API_KEY")
+  ```
+  ```swift Swift
+  import FinTag;
+
+  let fintag = FinTagClient(
+      baseURL: "YOUR_API_URL",
+      apiKey: "YOUR_API_KEY"
+  )
+  ```
+</CodeGroup>
+
+{/* ## Get started in three steps
 
 Get your documentation site running locally and make your first customization.
 
@@ -77,4 +143,4 @@ Now that you have your docs running, explore these key features:
 
 <Note>
   **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
-</Note>
+</Note> */}
