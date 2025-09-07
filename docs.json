@@ -17,16 +17,15 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "quickstart",
-              "installation"
+              "quickstart"
 
             ]
           },
           {
             "group": "Usage",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "usage/installation",
+              "usage/development"
             ]
           },
           {
