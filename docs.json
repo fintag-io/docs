@@ -31,18 +31,17 @@
           {
             "group": "The Future",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "the-future/roadmap",
+              "the-future/release-notes"
             ]
           },
           {
             "group": "Resource and Contribution",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "resources/faq",
+              "resources/support",
+              "resources/contributing",
+              "resources/license"
             ]
           }
         ]
