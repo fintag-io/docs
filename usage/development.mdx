@@ -41,7 +41,7 @@ const fintag = new FintagClient({
     apiKey: process.env.FINTAG_API_KEY
 });
 
-async function verifyTag(tag) {
+async function verifyFinTag(tag) {
     try {
         const result = await fintag.verify(tag);
         console.log('Verification Result:', result);
@@ -50,7 +50,7 @@ async function verifyTag(tag) {
     }
 }
 
-verifyTag('#fintag');
+verifyFinTag('#fintag');
 ```
 
 ```python Python
@@ -58,13 +58,13 @@ from fintag import FintagClient
 
 fintag = FintagClient(api_key=os.getenv("FINTAG_API_KEY"))
 
-def verify_tag(tag):
+def verify_fintag(tag):
     try:
         result = fintag.verify(tag)
         print("Verification Result:", result)
     except Exception as e:
         print("Error verifying tag:", e)
 
-verify_tag("#fintag")
+verify_fintag("#fintag")
 ```
 </CodeGroup>
