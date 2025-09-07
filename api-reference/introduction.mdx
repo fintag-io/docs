@@ -1,33 +1,41 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: 'API resource reference for FinTag SDK'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
 
-## Welcome
+The FinTag Public API allows developers to interact with identity and wallet data using a simple, secure public key.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+## Base URL
+The base URL for all API requests is:
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+```cURL
+https://api.fintag.io/
+```
+
 
 ## Authentication
+All API requests require an API key for authentication. A temporary API key for testing purposes is provided below:
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
 ```
+<API_KEY>
+```
+
+You can now include them in your sdk initialization code.
+
+## Rate Limiting
+The FinTag Public API enforces rate limiting to ensure fair usage and maintain performance. The current default rate limit is 10 requests per minute. If you exceed this limit, you will receive a `429 Too Many Requests` response. To avoid hitting the rate limit, consider implementing exponential backoff or request throttling in your application.
+
+## Error Handling
+The FinTag Public API uses standard HTTP status codes to indicate the success or failure of an API request. Common status codes include:
+- `200 OK`: The request was successful.
+- `400 Bad Request`: The request was invalid or cannot be served. The response will include details about the error.
+- `401 Unauthorized`: The API key is missing or invalid.
+- `403 Forbidden`: The request is understood, but it has been refused or access is not allowed.
+- `429 Too Many Requests`: The rate limit has been exceeded.
+- `500 Internal Server Error`: An error occurred on the server.
+In case of an error, the response body will typically contain a JSON object with more details about the error.
+
+## Support
+If you encounter any issues or have questions about the FinTag Public API, please reach out to our support team via the [Support Page](../resources/support) or join our community forums for assistance from other developers.
