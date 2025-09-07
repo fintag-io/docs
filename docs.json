@@ -7,7 +7,7 @@
     "light": "#A5B4FC",
     "dark": "#4338CA"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
@@ -31,8 +31,7 @@
           {
             "group": "The Future",
             "pages": [
-              "the-future/roadmap",
-              "the-future/release-notes"
+              "the-future/roadmap"
             ]
           },
           {

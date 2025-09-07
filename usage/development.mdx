@@ -41,6 +41,7 @@ const fintag = new FintagClient({
     apiKey: process.env.FINTAG_API_KEY
 });
 
+// Function to Verify a FinTag
 async function verifyFinTag(tag) {
     try {
         const result = await fintag.verify(tag);
@@ -50,7 +51,19 @@ async function verifyFinTag(tag) {
     }
 }
 
+// Function to Retrieve Wallet Info
+async function retrieveWalletInfo(tag) {
+    try {
+        const walletInfo = await fintag.getWalletInfo(tag);
+        console.log('Wallet Info:', walletInfo);
+    } catch (error) {
+        console.error('Error retrieving wallet info:', error);
+    }
+}
+
+
 verifyFinTag('#fintag');
+retrieveWalletInfo('#fintag');
 ```
 
 ```python Python
@@ -58,6 +71,7 @@ from fintag import FintagClient
 
 fintag = FintagClient(api_key=os.getenv("FINTAG_API_KEY"))
 
+# Function to Verify a FinTag
 def verify_fintag(tag):
     try:
         result = fintag.verify(tag)
@@ -65,6 +79,110 @@ def verify_fintag(tag):
     except Exception as e:
         print("Error verifying tag:", e)
 
+# Function to Retrieve Wallet Info
+def retrieve_wallet_info(tag):
+    try:
+        wallet_info = fintag.get_wallet_info(tag)
+        print("Wallet Info:", wallet_info)
+    except Exception as e:
+        print("Error retrieving wallet info:", e)
+
 verify_fintag("#fintag")
+retrieve_wallet_info("#fintag")
 ```
+
+```rust Rust
+use fintag::FintagClient;
+use std::env;
+
+let fintag = FintagClient::new(api_key=env::var("FINTAG_API_KEY").unwrap());
+
+// Function to Verify a FinTag
+fn verify_fintag(tag: &str) {
+    match fintag.verify(tag) {
+        Ok(result) => println!("Verification Result: {:?}", result),
+        Err(e) => eprintln!("Error verifying tag: {:?}", e),
+    }
+}
+
+// Function to Retrieve Wallet Info
+fn retrieve_wallet_info(tag: &str) {
+    match fintag.get_wallet_info(tag) {
+        Ok(wallet_info) => println!("Wallet Info: {:?}", wallet_info),
+        Err(e) => eprintln!("Error retrieving wallet info: {:?}", e),
+    }
+}
+
+verify_fintag("#fintag");
+retrieve_wallet_info("#fintag");
+```
+
+```go Go
+package main
+
+import (
+    "fmt"
+    "os"
+
+    "github.com/fintag-io/fintag-go"
+)
+
+func main() {
+    fintag := fintag.NewClient(fintag.WithAPIKey(os.Getenv("FINTAG_API_KEY")))
+
+    verifyFinTag(fintag, "#fintag")
+    retrieveWalletInfo(fintag, "#fintag")
+}
+
+// Function to Verify a FinTag
+func verifyFinTag(client *fintag.Client, tag string) {
+    result, err := client.Verify(tag)
+    if err != nil {
+        fmt.Println("Error verifying tag:", err)
+        return
+    }
+    fmt.Println("Verification Result:", result)
+}
+
+// Function to Retrieve Wallet Info
+func retrieveWalletInfo(client *fintag.Client, tag string) {
+    walletInfo, err := client.GetWalletInfo(tag)
+    if err != nil {
+        fmt.Println("Error retrieving wallet info:", err)
+        return
+    }
+    fmt.Println("Wallet Info:", walletInfo)
+}
+
+```
+
+```swift Swift
+import Fintag
+
+let fintag = FintagClient(apiKey: ProcessInfo.processInfo.environment["FINTAG_API_KEY"]!)
+
+// Function to Verify a FinTag
+func verifyFinTag(tag: String) {
+    do {
+        let result = try fintag.verify(tag: tag)
+        print("Verification Result: \(result)")
+    } catch {
+        print("Error verifying tag: \(error)")
+    }
+}
+
+// Function to Retrieve Wallet Info
+func retrieveWalletInfo(tag: String) {
+    do {
+        let walletInfo = try fintag.getWalletInfo(tag: tag)
+        print("Wallet Info: \(walletInfo)")
+    } catch {
+        print("Error retrieving wallet info: \(error)")
+    }
+}
+
+verifyFinTag(tag: "#fintag")
+retrieveWalletInfo(tag: "#fintag")
+```
+
 </CodeGroup>
