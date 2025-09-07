@@ -10,8 +10,9 @@ FinTag provides official SDKs for various programming languages. Choose the one 
   
   <Tab title="JavaScript/TypeScript">
   <Info>
-    **Prerequisites**:
+    **Node.js Requirements**:
     - Node.js version 19 or higher
+    - Works with TypeScript out of the box (type definitions included).
   </Info>
 
   ### Install the SDK
@@ -31,6 +32,23 @@ FinTag provides official SDKs for various programming languages. Choose the one 
 
 </CodeGroup>
 
+
+  ### Import the SDK
+  You can import the FinTag SDK in your JavaScript or TypeScript project as follows:
+
+  ```javascript
+  import { FintagClient } from '@fintag/js';
+
+  const fintag = new FintagClient({
+    apiUrl: 'YOUR_API_URL',
+    apiKey: 'YOUR_API_KEY',
+  });
+  ```
+
+  <br />
+
+
+
   </Tab>
 
   <Tab title="Python">
@@ -39,16 +57,26 @@ FinTag provides official SDKs for various programming languages. Choose the one 
     - Python version 3.8 or higher
   </Info>
 
-  <CodeGroup>
+  ### Install the SDK
+  To install the FinTag SDK, use pip:
+
+
   ```bash pip
   pip install fintag-py
   ```
 
-  ``` bash uv
-  uv pip install fintag-py
-  ```
 
-  </CodeGroup>
+  ### Import the SDK
+  You can import the FinTag SDK in your Python project as follows:
+
+  ```python
+  from fintag import FintagClient
+
+  fintag = FinTagClient(
+      api_url='YOUR_API_URL',
+      api_key='YOUR_API_KEY',
+  )
+  ```
 
   </Tab>
 
@@ -58,10 +86,24 @@ FinTag provides official SDKs for various programming languages. Choose the one 
     - Rust version 1.60 or higher
   </Info>
 
-```bash
-cargo add fintag-rust
-```
+  ### Install the SDK
+  To install the FinTag SDK, use Cargo:
 
+    ```bash
+    cargo add fintag-rust
+    ```
+  
+  ### Import the SDK
+  You can import the FinTag SDK in your Rust project as follows:
+
+  ```rust
+  use fintag_rust::FintagClient;
+
+  let fintag = FintagClient::new(
+      api_url: "YOUR_API_URL",
+      api_key: "YOUR_API_KEY",
+  );
+  ```
   </Tab>
 
   <Tab title="Go">
@@ -70,9 +112,26 @@ cargo add fintag-rust
     - Go version 1.18 or higher
   </Info>
 
-```bash
-go get github.com/fintag-io/fintag-go
-```
+  ### Install the SDK
+  To install the FinTag SDK, use go get:
+
+  ```bash
+  go get github.com/fintag-io/fintag-go
+  ```
+
+  ### Import the SDK
+  You can import the FinTag SDK in your Go project as follows:
+
+  ```go
+  import (
+      "github.com/fintag-io/fintag-go"
+  )
+
+  var fintag = fintag.NewClient(
+      fintag.WithAPIURL("YOUR_API_URL"),
+      fintag.WithAPIKey("YOUR_API_KEY"),
+  )
+  ```
 
   </Tab>
 
@@ -82,10 +141,29 @@ go get github.com/fintag-io/fintag-go
     - Swift version 5.5 or higher
   </Info>
 
-```bash
-swift package add @fintag-io/fintag-swift
-```
+  ### Install the SDK
+  To install the FinTag SDK, use Swift Package Manager:
+
+  ```bash
+  swift package add @fintag-io/fintag-swift
+  ```
+
+  ### Import the SDK
+  You can import the FinTag SDK in your Swift project as follows:
+
+  ```swift
+  import FinTag
+
+  let fintag = FinTagClient(
+      apiURL: "YOUR_API_URL",
+      apiKey: "YOUR_API_KEY"
+  )
+  ```
 
   </Tab>
 
 </Tabs>
+
+
+### Next Steps
+After installing and initializing the SDK, you can start using it to interact with the FinTag API.

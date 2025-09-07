@@ -1,0 +1,70 @@
+---
+title: "Development"
+description: "Guides and best practices for developing applications using the FinTag SDK."
+---
+
+# Development with FinTag SDK
+This section provides guidelines and best practices for developing applications using the FinTag SDK. Whether you're building a web application, a mobile app, or a backend service, these tips will help you make the most of the FinTag SDK.
+
+## Best Practices
+
+1. **Keep Your API Keys Secure**: Never hard-code your API keys directly in your source code. Use environment variables or secure vaults to manage sensitive information.
+
+2. **Error Handling**: Implement robust error handling to manage API errors gracefully. Use try-catch blocks and provide meaningful error messages to users.
+
+3. **Rate Limiting**: Be mindful of API rate limits. Implement exponential backoff strategies for retrying failed requests.
+
+4. **Logging**: Use logging libraries to capture important events and errors. This will help you troubleshoot issues more effectively.
+
+5. **Testing**: Write unit tests for your code that interacts with the FinTag API. Use mocking libraries to simulate API responses.
+
+6. **Documentation**: Keep your code well-documented. Use comments and docstrings to explain complex logic and API interactions.
+
+7. **Stay Updated**: Regularly check for updates to the FinTag SDK and API. New features and bug fixes can enhance your application's functionality and security.
+
+
+## Functions
+The FinTag SDK provides a variety of functions to interact with the FinTag API. Here are some common functions you might use:
+- `verify("#fintag")`: Verifies a FinTag.
+- `getWalletInfo("#fintag")`: Retrieves wallet information for a specific FinTag.
+
+## Installation and Setup
+Refer to the [Installation Guide](./installation) for detailed instructions on how to install and set up the FinTag SDK for your preferred programming language.
+
+## Example Usage
+
+<CodeGroup>
+```javascript JavaScript
+import { FintagClient } from '@fintag/js';
+
+const fintag = new FintagClient({
+    apiKey: process.env.FINTAG_API_KEY
+});
+
+async function verifyTag(tag) {
+    try {
+        const result = await fintag.verify(tag);
+        console.log('Verification Result:', result);
+    } catch (error) {
+        console.error('Error verifying tag:', error);
+    }
+}
+
+verifyTag('#fintag');
+```
+
+```python Python
+from fintag import FintagClient
+
+fintag = FintagClient(api_key=os.getenv("FINTAG_API_KEY"))
+
+def verify_tag(tag):
+    try:
+        result = fintag.verify(tag)
+        print("Verification Result:", result)
+    except Exception as e:
+        print("Error verifying tag:", e)
+
+verify_tag("#fintag")
+```
+</CodeGroup>
