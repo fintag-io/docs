@@ -38,7 +38,8 @@ Refer to the [Installation Guide](./installation) for detailed instructions on h
 import { FintagClient } from '@fintag/js';
 
 const fintag = new FintagClient({
-    apiKey: process.env.FINTAG_API_KEY
+    apiUrl: "<FINTAG_API_URL>",
+    apiKey: "<FINTAG_API_KEY>"
 });
 
 // Function to Verify a FinTag
@@ -69,7 +70,7 @@ retrieveWalletInfo('#fintag');
 ```python Python
 from fintag import FintagClient
 
-fintag = FintagClient(api_key=os.getenv("FINTAG_API_KEY"))
+fintag = FintagClient(api_url="<FINTAG_API_URL>", api_key="<FINTAG_API_KEY>")
 
 # Function to Verify a FinTag
 def verify_fintag(tag):
@@ -128,7 +129,7 @@ import (
 )
 
 func main() {
-    fintag := fintag.NewClient(fintag.WithAPIKey(os.Getenv("FINTAG_API_KEY")))
+    fintag := fintag.NewFintagClient("<API_KEY>")
 
     verifyFinTag(fintag, "#fintag")
     retrieveWalletInfo(fintag, "#fintag")
@@ -159,7 +160,7 @@ func retrieveWalletInfo(client *fintag.Client, tag string) {
 ```swift Swift
 import Fintag
 
-let fintag = FintagClient(apiKey: ProcessInfo.processInfo.environment["FINTAG_API_KEY"]!)
+let fintag = FinTagClient(apiKey: "<FINTAG_API_KEY>", baseURL: "<FINTAG_API_URL>")
 
 // Function to Verify a FinTag
 func verifyFinTag(tag: String) {
